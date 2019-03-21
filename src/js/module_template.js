@@ -1,5 +1,5 @@
-SPA.Data = (function ($) {
-    var configMap = {};
+const module = (function ($) {
+    const configMap = {};
 
     function _initModule() {
         return true;
