@@ -10,7 +10,7 @@ function Widget(message, color) {
                    ​<button id="widget-close" type="button" class="widget-close" onclick="closeWidget()">&times;</button>
                </div>
                <div class="widget-body">
-                   <img class="widget-img" src="images/${color}.png" alt="${color}"/>
+                   <img class="widget-img" src="https://raw.githubusercontent.com/MrKoenn/Reversi/e039cace05395469a70957aaad80381cc8dfbce3/WebApplication/wwwroot/images/${color}.png" alt="${color}"/>
                    <span id="widget-message" class="widget-msg">${this.message}</span>
                </div>
                ​<div class="widget-footer"><button type="button" class="widget-btn" onclick="closeWidget()">Close</button></div>

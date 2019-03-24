@@ -67,7 +67,7 @@ const templates = function(){
 const compileSass = function () {
     return gulp.src('./src/sass/**/*.scss')
         .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('./css'));
+        .pipe(gulp.dest('./src/css'));
 };
 
 const watch = function() {
@@ -90,4 +90,4 @@ const serve = function() {
 
 exports.watch = gulp.series(watch);
 exports.serve = gulp.parallel(watch, serve);
-exports.build = gulp.parallel(compileSass, html, css, js, vendor, templates);
+exports.build = gulp.series(compileSass, gulp.parallel(html, css, js, vendor, templates));

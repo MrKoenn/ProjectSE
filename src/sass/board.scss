@@ -15,11 +15,11 @@ $ghost_color: #579642;
 }
 
 .white {
-  background-color: #FFFFFF;
+  background: linear-gradient(to bottom right, #FFF, #757575);
 }
 
 .black {
-  background-color: #000000;
+  background: linear-gradient(to bottom right, #303030, #000);
 }
 
 .ghost:hover {

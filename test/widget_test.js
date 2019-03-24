@@ -1,4 +1,8 @@
 describe("Feedback Widget", function () {
+    afterEach(function () {
+        closeWidget();
+    });
+
     it('should have a function to show the widget', function () {
         expect(new Widget().show).toBeDefined();
     });

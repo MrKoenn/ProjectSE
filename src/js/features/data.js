@@ -67,10 +67,17 @@ SPA.Data = (function ($) {
 
     function _simpleGet(path) {
         const promise = new Promise((resolve, reject) => {
-            $.get(path, function (data) {
+            const request = $.ajax({
+                url: path,
+                type: 'GET'
+            });
+            request.done(function (data) {
                 resolve(data);
-            }).fail(function () {
-                reject("Request failed");
+            });
+            request.fail(function () {
+                let widget = new Widget("Failed to get the data from the server", "red");
+                widget.show();
+                resolve({});
             });
         });
         return Promise.resolve(promise);

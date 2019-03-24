@@ -4,7 +4,7 @@ SPA.Reversi = (function ($) {
     function _initModule(wrapper) {
         console.log("Initializing board...");
 
-        SPA.Data.getBoard().then(board => {
+        Promise.resolve(SPA.Data.getBoard()).then(board => {
             console.log(board);
             SPA.Model.saveState(board);
 
@@ -55,7 +55,7 @@ SPA.Reversi = (function ($) {
     }
 
     function _refreshBoard() {
-        SPA.Data.getBoard().then(board => {
+        Promise.resolve(SPA.Data.getBoard()).then(board => {
             console.log(`Received new board: ${board}`);
             const tiles = SPA.Model.tiles();
             for (let i = 0; i < tiles.length; i++) {
